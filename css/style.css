@@ -1,3 +1,4 @@
+/* ---- COMMON & UTILITIES */
 * {box-sizing: border-box; margin: 0; padding: 0;}
 
 .wrapper {
@@ -17,6 +18,9 @@
     /* margin-top: 2.5vh; */
 }
 
+
+/* ---- STYLE */
+/* _SIDEBAR */
 .sidebar {
     width: 35%;
     outline: 1px dotted lightblue;
@@ -24,6 +28,7 @@
     height: 100%;
 }
 
+/* _MAIN */
 .main-container {
     position: relative;
     height: 100%;
@@ -31,6 +36,7 @@
     width: 65%;
 }
 
+/* _main-top */
 .main-top {
     width: 100%;
     outline: 1px dotted lightblue;
@@ -38,6 +44,7 @@
     
 }
 
+/* _main-bottom */
 .mian-bottom {
     width: 100%;
     position: absolute;
