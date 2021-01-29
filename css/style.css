@@ -30,6 +30,10 @@ ul {
   list-style: none;
 }
 
+.sidebar>nav, .main-top>nav {
+    background-color: #EAEAEA;
+}
+
 .avatar {
   width: 50px;
   border-radius: 50%;
@@ -80,11 +84,25 @@ ul {
 }
 
 /* _notifications */
-.sidebar .notifications i {
-  font-size: 40px;
-  background-color: lightblue;
-  border-radius: 50%;
-  /* vertical-align: middle; */
+.sidebar .notifications {
+    background-color: #8EDAFC;
+}
+
+.sidebar .notifications .img-container {
+    border-radius: 50%;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.sidebar .notifications .img-container i {
+  font-size: 30px;
+  color: #8EDAFC;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .sidebar .notifications * {
@@ -92,9 +110,13 @@ ul {
 }
 
 /* _searchbar */
+.sidebar .searchbar {
+    background-color: #FAFAF9;
+}
 
 /* _contacts' list */
 .contacts-container {
+    background-color: white;
   overflow-y: scroll;
   /* height: calc(100% - user - notifications - searchbar); */
 }
@@ -154,6 +176,7 @@ ul {
   right: 0;
   outline: 1px dotted lightblue;
   height: 100px;
+  background-color: #F2EFE9;
 }
 
 .main-bottom .box {
