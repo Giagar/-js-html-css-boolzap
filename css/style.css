@@ -1,0 +1,39 @@
+.wrapper {
+    width: 80%;
+    min-width: 950px;
+    outline: 1px dotted lightblue;
+    height: 95vh;
+    clear: both;
+    margin: 0 auto;
+    margin-top: 2.5vh;
+}
+
+.sidebar {
+    width: 35%;
+    outline: 1px dotted lightblue;
+    float: left;
+    height: 100%;
+}
+
+.main-container {
+    position: relative;
+    height: 100%;
+    float: right;
+    width: 65%;
+}
+
+.main {
+    width: 100%;
+    outline: 1px dotted lightblue;
+    height: calc(100% - 100px);
+    
+}
+
+.box-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    outline: 1px dotted lightblue;
+    height: 100px;
+}
