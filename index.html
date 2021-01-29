@@ -26,13 +26,13 @@
                             <span class="user-name">Nome Utente</span>
                         </li>
                         <li>
-                            <i class="fas fa-circle-notch"></i>
+                            <i class="icon-size icon-color-light fas fa-circle-notch"></i>
                         </li>
                         <li>
-                            <i class="fas fa-comment-alt"></i>
+                            <i class="icon-size icon-color-light fas fa-comment-alt"></i>
                         </li>
                         <li>
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="icon-size icon-color-light fas fa-ellipsis-v"></i>
                         </li>
                     </ul>
                 </nav>
@@ -66,10 +66,44 @@
 
             <main class="main-container">
                 <!-- contiene navbar, lista messaggi(box) -->
-                <section class="main-top">main-top</section>
+                <section class="main-top">
+
+                    <!-- navbar -->
+                    <nav>
+                        <ul>
+                            <li class="interlocutor-container clearfix">
+                                <img class="avatar float-left" src="./images/avatar_1.jpg" alt="Michele's picture">
+                                <div class="interlocutor-details">
+                                    <span class="interlocutor-name">Michele</span> <br>
+                                    <span class="interlocutor-access">Ultimo accesso oggi alle</span>
+                                </div>
+                            </li>
+                            <li><i class="icon-size icon-color-light fa fa-search"></i></li>
+                            <li><i class="icon-size icon-color-light fas fa-paperclip"></i></li>
+                            <li><i class="icon-size icon-color-light fas fa-ellipsis-v"></i></li>
+                        </ul>
+                    </nav>
+
+                    <!-- lista messaggi -->
+                    <div class="messages-container">
+                        <div class="my-message">mymsg: lorem ipsum</div>
+                        <div class="interlocutor-message">interlocutormsg: lorem ipsum</div>
+                    </div>
+
+                </section>
 
                 <!-- contiene input per messaggi -->
-                <section class="main-bottom">main-bottom</section>
+                <section class="main-bottom clearfix">
+                    <div class="box box-left float-left">
+                        <i class="icon-size icon-color-dark far fa-smile"></i>
+                    </div>
+                    <div class="box box-central float-left">
+                        <input type="text" name="userMessage" id="userMessage">
+                    </div>
+                    <div class="box box-right float-left">
+                        <i class="icon-size icon-color-dark fas fa-microphone"></i>
+                    </div>
+                </section>
             </main>
         </div>
     </div>

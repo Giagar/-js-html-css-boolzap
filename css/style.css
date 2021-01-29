@@ -1,120 +1,169 @@
 /* ---- COMMON & UTILITIES */
 html {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-* {box-sizing: border-box; margin: 0; padding: 0;}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 .wrapper {
-    height: 100vh;
-    width: 100vw;
-    padding: 2.5vh 0;
-    background: linear-gradient(#019788 15%, #d6dbd7 15%);
+  height: 100vh;
+  width: 100vw;
+  padding: 2.5vh 0;
+  background: linear-gradient(#019788 15%, #d6dbd7 15%);
 }
 
 .app-container {
-    width: 80%;
-    min-width: 950px;
-    outline: 1px dotted lightblue;
-    height: 95vh;
-    clear: both;
-    margin: 0 auto;
-    /* margin-top: 2.5vh; */
+  width: 80%;
+  min-width: 950px;
+  outline: 1px dotted lightblue;
+  height: 95vh;
+  clear: both;
+  margin: 0 auto;
+  /* margin-top: 2.5vh; */
 }
 
-.sidebar ul {
-    list-style: none;
+ul {
+  list-style: none;
 }
 
 .avatar {
-    width: 50px;
-    border-radius: 50%;
+  width: 50px;
+  border-radius: 50%;
 }
 
-.float-left { 
-float: left; 
+.icon-size {
+    font-size: 22px;
 }
 
-.float-right { 
-float: right; 
+.icon-color-light {
+    color: #B1B1B2;
 }
 
-.clearfix::after { 
-clear: both; 
+.icon-color-dark {
+    color: #6A7475;
 }
 
+.float-left {
+  float: left;
+}
 
+.float-right {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 /* ---- STYLE */
 /* _SIDEBAR */
 .sidebar {
-    width: 35%;
-    outline: 1px dotted lightblue;
-    float: left;
-    height: 100%;
+  width: 35%;
+  outline: 1px dotted lightblue;
+  float: left;
+  height: 100%;
 }
 
 /* _nav */
 .sidebar nav ul li {
-    display: inline-block;
+  display: inline-block;
 }
 
 .sidebar nav ul .user img {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 /* _notifications */
 .sidebar .notifications i {
-    font-size: 40px;
-    background-color: lightblue;
-    border-radius: 50%;
-    /* vertical-align: middle; */
+  font-size: 40px;
+  background-color: lightblue;
+  border-radius: 50%;
+  /* vertical-align: middle; */
 }
 
 .sidebar .notifications * {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 /* _searchbar */
 
 /* _contacts' list */
 .contacts-container {
-    overflow-y: scroll;
-    /* height: calc(100% - user - notifications - searchbar); */
+  overflow-y: scroll;
+  /* height: calc(100% - user - notifications - searchbar); */
 }
 
 .contacts-container li {
-    border-top: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
 }
 
 .contacts-container img {
-    vertical-align:text-top;
+  vertical-align: text-top;
 }
-
 
 /* _MAIN */
 .main-container {
-    position: relative;
-    height: 100%;
-    float: right;
-    width: 65%;
+  position: relative;
+  height: 100%;
+  float: right;
+  width: 65%;
 }
 
 /* _main-top */
 .main-top {
-    width: 100%;
-    outline: 1px dotted lightblue;
-    height: calc(100% - 100px);
+  width: 100%;
+  outline: 1px dotted lightblue;
+  height: calc(100% - 100px);
 }
 
+/* __nav */
+.main-top nav ul li {
+  display: inline-block;
+}
 
+.main-top nav .interlocutor-container {
+  width: 80%;
+}
+
+.main-top nav .interlocutor-container img {
+  vertical-align: middle;
+}
+
+.main-top nav .interlocutor-container .interlocutor-details {
+  vertical-align: middle;
+}
+
+/* __lista messaggi */
+.messages-container {
+    background-image: url("../images/mine.jpg");
+    overflow-y: scroll;
+    /* height: calc(100% - nav - msgInput) */
+}
 
 /* _main-bottom */
 .main-bottom {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    outline: 1px dotted lightblue;
-    height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  outline: 1px dotted lightblue;
+  height: 100px;
+}
+
+.main-bottom .box {
+    text-align: center;
+}
+
+.main-bottom .box-left, .box-right {
+    width: 10%;
+}
+
+.main-bottom .box-central {
+    width: 80%;
 }
