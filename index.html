@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <!-- search -->
+                <!-- searchbar -->
                 <div class="searchbar">
                     <i class="fas fa-search"></i>
                     <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
@@ -55,7 +55,10 @@
                 <!-- lista contatti -->
                 <div class="contacts-container">
                     <ul>
-                        <!-- <li v-for="" ></li> -->
+                        <li v-for="contact in contacts">
+                            <img class="contact-img avatar" :src="'./images/' + contact.avatar" alt="contact's picture">
+                            <span class="contact-name">{{contact.name}}</span>
+                        </li>
                     </ul>
                 </div>
 

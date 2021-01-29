@@ -22,8 +22,8 @@ html {
     /* margin-top: 2.5vh; */
 }
 
-nav ul {
-    list-style: none;;
+.sidebar ul {
+    list-style: none;
 }
 
 .avatar {
@@ -74,6 +74,23 @@ clear: both;
 .sidebar .notifications * {
     vertical-align: middle;
 }
+
+/* _searchbar */
+
+/* _contacts' list */
+.contacts-container {
+    overflow-y: scroll;
+    /* height: calc(100% - user - notifications - searchbar); */
+}
+
+.contacts-container li {
+    border-top: 1px solid lightgrey;
+}
+
+.contacts-container img {
+    vertical-align:text-top;
+}
+
 
 /* _MAIN */
 .main-container {
