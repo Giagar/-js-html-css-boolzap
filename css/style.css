@@ -1,11 +1,20 @@
+* {box-sizing: border-box; margin: 0; padding: 0;}
+
 .wrapper {
+    height: 100vh;
+    width: 100vw;
+    padding: 2.5vh 0;
+    background: linear-gradient(#019788 15%, #d6dbd7 15%);
+}
+
+.app-container {
     width: 80%;
     min-width: 950px;
     outline: 1px dotted lightblue;
     height: 95vh;
     clear: both;
     margin: 0 auto;
-    margin-top: 2.5vh;
+    /* margin-top: 2.5vh; */
 }
 
 .sidebar {
@@ -22,14 +31,14 @@
     width: 65%;
 }
 
-.main {
+.main-top {
     width: 100%;
     outline: 1px dotted lightblue;
     height: calc(100% - 100px);
     
 }
 
-.box-bottom {
+.mian-bottom {
     width: 100%;
     position: absolute;
     bottom: 0;
