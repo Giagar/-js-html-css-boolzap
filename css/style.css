@@ -68,8 +68,12 @@ clear: both;
     font-size: 40px;
     background-color: lightblue;
     border-radius: 50%;
+    /* vertical-align: middle; */
 }
 
+.sidebar .notifications * {
+    vertical-align: middle;
+}
 
 /* _MAIN */
 .main-container {
