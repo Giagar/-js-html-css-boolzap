@@ -1,6 +1,6 @@
 /* ---- COMMON & UTILITIES */
 html {
-    font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 * {
@@ -29,8 +29,9 @@ ul {
   list-style: none;
 }
 
-.sidebar>nav, .main-top>nav {
-    background-color: #EAEAEA;
+.sidebar > nav,
+.main-top > nav {
+  background-color: #eaeaea;
 }
 
 .avatar {
@@ -40,16 +41,16 @@ ul {
 }
 
 .icon-size {
-    font-size: 22px;
-    padding-right: 15px;
+  font-size: 22px;
+  padding-right: 15px;
 }
 
 .icon-color-light {
-    color: #B1B1B2;
+  color: #b1b1b2;
 }
 
 .icon-color-dark {
-    color: #6A7475;
+  color: #6a7475;
 }
 
 .float-left {
@@ -77,15 +78,16 @@ ul {
 
 /* _nav */
 .sidebar nav {
-  height: 60px;
-  line-height: 60px;
+  height: 70px;
+  line-height: 70px;
 }
 
 .sidebar nav ul li {
   display: inline-block;
 }
 
-.sidebar nav ul li *, .sidebar nav ul .user * {
+.sidebar nav ul li *,
+.sidebar nav ul .user * {
   vertical-align: middle;
 }
 
@@ -99,28 +101,33 @@ ul {
   text-align: right;
 }
 
-
-
 /* _notifications */
 .sidebar .notifications {
-    background-color: #8EDAFC;
+  background-color: #8edafc;
+  height: 70px;
+  line-height: 70px;
 }
 
 .sidebar .notifications .img-container {
-    border-radius: 50%;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    position: relative;
+  border-radius: 50%;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  position: relative;
 }
 
 .sidebar .notifications .img-container i {
   font-size: 30px;
-  color: #8EDAFC;
+  color: #8edafc;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.sidebar .notifications .description {
+  line-height: normal;
+  width: calc(100% - 70px);
 }
 
 .sidebar .notifications * {
@@ -129,12 +136,35 @@ ul {
 
 /* _searchbar */
 .sidebar .searchbar {
-    background-color: #FAFAF9;
+  background-color: #fafaf9;
+  /* height: 50px; */
+  /* line-height: 50px; */
+  padding: 7px;
 }
+
+.sidebar .searchbar .input-container {
+  position: relative;
+}
+
+.sidebar .searchbar .input-container i {
+  position: absolute;
+  bottom: 0;
+  transform: translate(10px, -50%);
+}
+
+.sidebar .searchbar .input-container input {
+  padding-left: 40px;
+  height: 35px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+
 
 /* _contacts' list */
 .contacts-container {
-    background-color: white;
+  background-color: white;
   overflow-y: scroll;
   /* height: calc(100% - user - notifications - searchbar); */
 }
@@ -181,9 +211,9 @@ ul {
 
 /* __lista messaggi */
 .messages-container {
-    background-image: url("../images/mine.jpg");
-    overflow-y: scroll;
-    /* height: calc(100% - nav - msgInput) */
+  background-image: url("../images/mine.jpg");
+  overflow-y: scroll;
+  /* height: calc(100% - nav - msgInput) */
 }
 
 /* _main-bottom */
@@ -194,17 +224,18 @@ ul {
   right: 0;
   outline: 1px dotted lightblue;
   height: 100px;
-  background-color: #F2EFE9;
+  background-color: #f2efe9;
 }
 
 .main-bottom .box {
-    text-align: center;
+  text-align: center;
 }
 
-.main-bottom .box-left, .box-right {
-    width: 10%;
+.main-bottom .box-left,
+.box-right {
+  width: 10%;
 }
 
 .main-bottom .box-central {
-    width: 80%;
+  width: 80%;
 }
