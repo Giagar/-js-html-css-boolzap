@@ -136,10 +136,10 @@ ul {
 
 /* _searchbar */
 .sidebar .searchbar {
-  background-color: #fafaf9;
+  background-color: #FAFAFA;
   /* height: 50px; */
   /* line-height: 50px; */
-  padding: 7px;
+  padding: 7px; /* uguale a padding contact list li */
 }
 
 .sidebar .searchbar .input-container {
@@ -160,21 +160,24 @@ ul {
   border-radius: 4px;
 }
 
-
-
 /* _contacts' list */
 .contacts-container {
   background-color: white;
   overflow-y: scroll;
-  /* height: calc(100% - user - notifications - searchbar); */
+  height: calc(100% - 70px - 70px - 49px);
 }
 
 .contacts-container li {
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid #FAFAFA;
+  padding: 7px;
 }
 
 .contacts-container img {
   vertical-align: text-top;
+}
+
+.contacts-container .contact-name {
+  padding-left: 10px;
 }
 
 /* _MAIN */
