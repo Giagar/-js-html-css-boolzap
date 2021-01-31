@@ -36,10 +36,12 @@ ul {
 .avatar {
   width: 50px;
   border-radius: 50%;
+  padding-left: 10px;
 }
 
 .icon-size {
     font-size: 22px;
+    padding-right: 15px;
 }
 
 .icon-color-light {
@@ -74,13 +76,30 @@ ul {
 }
 
 /* _nav */
+.sidebar nav {
+  height: 60px;
+  line-height: 60px;
+}
+
 .sidebar nav ul li {
   display: inline-block;
 }
 
-.sidebar nav ul .user img {
+.sidebar nav ul li *, .sidebar nav ul .user * {
   vertical-align: middle;
 }
+
+.sidebar nav .box-left {
+  width: 60%;
+  text-align: left;
+}
+
+.sidebar nav .box-right {
+  width: 40%;
+  text-align: right;
+}
+
+
 
 /* _notifications */
 .sidebar .notifications {
