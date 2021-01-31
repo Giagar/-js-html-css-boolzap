@@ -196,16 +196,43 @@ ul {
 }
 
 /* __nav */
+.main-top nav {
+  height: 70px;
+  line-height: 70px;
+}
+
+.main-top nav ul.box-left {
+  width: 60%;
+}
+
+.main-top nav ul.box-right {
+  width: 40%;
+  text-align: right;
+}
+
 .main-top nav ul li {
   display: inline-block;
 }
 
 .main-top nav .interlocutor-container {
-  width: 80%;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
 }
 
-.main-top nav .interlocutor-container img {
+.main-top nav .interlocutor-container * {
   vertical-align: middle;
+}
+
+.main-top nav .interlocutor-container .interlocutor-details {
+  line-height: normal;
+  display: inline-block;
+  padding-left: 7px;
+}
+
+.main-top nav .interlocutor-container .interlocutor-access {
+  font-size: 13px;
+  color: #ABB1B4;
 }
 
 .main-top nav .interlocutor-container .interlocutor-details {
