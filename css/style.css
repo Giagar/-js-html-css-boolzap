@@ -250,7 +250,29 @@ ul {
   background-image: url("../images/mine.jpg");
   overflow-y: scroll;
   height: calc(100% - 70px);
+  padding: 30px 0;
 }
+
+/* message */
+.message {
+  /* height: 40px; */
+  width: 190px;
+  border-radius: 6px;
+  padding: 10px 10px 15px;
+  position: relative; /* per posizionare ora */
+  margin-bottom: 10px;
+}
+
+.my-message {
+  margin-left: calc(100% - 10% - 190px); /* width contenitore - margine sinistro - width fumetto */
+  background-color: #DFFBC6;
+}
+
+.interlocutor-message {
+  margin-left: 10%;
+  background-color: white;
+}
+/* /message */
 
 /* _main-bottom */
 .main-bottom {
@@ -279,5 +301,5 @@ ul {
   height: 50px;
   border: 1px solid hsl(0, 0%, 20%);
   border-radius: 4px;
-  padding-left: 10px
+  padding-left: 10px  
 }
