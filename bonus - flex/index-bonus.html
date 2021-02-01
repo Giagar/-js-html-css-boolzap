@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzap</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style-bonus.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <div class="app-container" id="root">
+
+            <!-- contiene navbar, notifiche, search, lista contatti (box) -->
+            <aside class="sidebar">
+                
+                <!-- navbar -->
+                <nav>
+                    <ul class="box-left">
+                        <li class="user">
+                            <img src="./images/avatar_io.jpg" alt="user's picture" class="user-picture avatar">
+                            <span class="user-name">Nome Utente</span>
+                        </li>
+                    </ul>
+                    
+                    <ul class="box-right">
+                        <li>
+                            <i class="icon-size icon-color-light fas fa-circle-notch"></i>
+                        </li>
+                        <li>
+                            <i class="icon-size icon-color-light fas fa-comment-alt"></i>
+                        </li>
+                        <li>
+                            <i class="icon-size icon-color-light fas fa-ellipsis-v"></i>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- notifiche -->
+                <div class="notifications">
+                    <div class="img-container">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="description">
+                        <span>Ricevi notifiche di nuovi messaggi</span> <br>
+                        <a href="#">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+
+                <!-- searchbar -->
+                <div class="searchbar">
+                    <div class="input-container">
+                        <i class="icon-color-light fas fa-search"></i>
+                        <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+
+                <!-- lista contatti -->
+                <div class="contacts-container">
+                    <ul>
+                        <li v-for="contact in contacts">
+                            <img class="contact-img avatar" :src="'./images/' + contact.avatar" alt="contact's picture">
+                            <span class="contact-name">{{contact.name}}</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </aside>
+
+            <main class="main-container">
+                <!-- contiene navbar, lista messaggi(box) -->
+                <section class="main-top">
+
+                    <!-- navbar -->
+                    <nav>
+                        <ul class="box-left">
+                            <li class="interlocutor-container">
+                                <img class="avatar" src="./images/avatar_1.jpg" alt="Michele's picture">
+                                <div class="interlocutor-details">
+                                    <span class="interlocutor-name">Michele</span> <br>
+                                    <span class="interlocutor-access">Ultimo accesso oggi alle</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <ul class="box-right">
+                            <li><i class="icon-size icon-color-light fa fa-search"></i></li>
+                            <li><i class="icon-size icon-color-light fas fa-paperclip"></i></li>
+                            <li><i class="icon-size icon-color-light fas fa-ellipsis-v"></i></li>
+                        </ul>
+                    </nav>
+
+                    <!-- lista messaggi -->
+                    <div class="messages-container">
+                        <div class="message my-message">mymsg: lorem ipsum</div>
+                        <div class="message interlocutor-message">interlocutormsg: lorem ipsum</div>
+                        <div class="message interlocutor-message">interlocutormsg: lorem ipsum</div>
+                        <div class="message my-message">mymsg: lorem ipsum</div>
+                    </div>
+
+                </section>
+
+                <!-- contiene input per messaggi -->
+                <section class="main-bottom">
+                    <div class="box-left">
+                        <i class="icon-size icon-color-dark far fa-smile"></i>
+                    </div>
+                    <div class="box-central">
+                        <input type="text" name="userMessage" id="userMessage" placeholder="Scrivi un messaggio">
+                    </div>
+                    <div class="box-right">
+                        <i class="icon-size icon-color-dark fas fa-microphone"></i>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    
+    <script src="./js/script-bonus.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+/* ---- COMMON & UTILITIES */
+html {
+  font-family: "Lato", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  padding: 2.5vh 0;
+  background: linear-gradient(#019788 15%, #d6dbd7 15%);
+}
+
+.app-container {
+  width: 80%;
+  min-width: 950px;
+  height: 95vh;
+  margin: 0 auto;
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+.sidebar > nav,
+.main-top > nav {
+  background-color: #eaeaea;
+}
+
+.avatar {
+  width: 50px;
+  border-radius: 50%;
+  padding-left: 10px;
+}
+
+.icon-size {
+  font-size: 22px;
+}
+
+.sidebar .icon-size, .main-top .icon-size {
+  padding-right: 15px;
+}
+
+.icon-color-light {
+  color: #b1b1b2;
+}
+
+.icon-color-dark {
+  color: #6a7475;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ---- STYLE */
+/* _SIDEBAR */
+.sidebar {
+  width: 35%;
+  height: 100%;
+  border-right: 1px solid #8181CF;
+}
+
+/* _nav */
+.sidebar nav {
+  height: 70px;
+  /* line-height: 70px; */
+  display: flex;
+  align-items: center;
+}
+
+.sidebar nav ul li {
+  display: inline-block;
+}
+
+.sidebar nav ul li *,
+.sidebar nav ul .user * {
+  vertical-align: middle;
+}
+
+.sidebar nav .box-left {
+  width: 60%;
+  text-align: left;
+}
+
+.sidebar nav .box-right {
+  width: 40%;
+  text-align: right;
+}
+
+/* _notifications */
+.sidebar .notifications {
+  background-color: #8edafc;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .notifications .img-container {
+  border-radius: 50%;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-left: 10px;
+}
+
+.sidebar .notifications .img-container i {
+  font-size: 24px;
+  color: #8edafc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sidebar .notifications .description {
+  line-height: normal;
+  padding-left: 10px;
+}
+
+.sidebar .notifications .description a {
+  color: #6E92A9;
+}
+
+/* _searchbar */
+.sidebar .searchbar {
+  background-color: #FAFAFA;
+  padding: 7px; /* uguale a padding contact list li */
+}
+
+.sidebar .searchbar .input-container {
+  position: relative;
+}
+
+.sidebar .searchbar .input-container i {
+  position: absolute;
+  bottom: 0;
+  transform: translate(10px, -50%);
+}
+
+.sidebar .searchbar .input-container input {
+  padding-left: 40px;
+  height: 35px;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+/* _contacts' list */
+.contacts-container {
+  background-color: white;
+  overflow-y: scroll;
+  height: calc(100% - 70px - 70px - 49px);
+}
+
+.contacts-container li {
+  border-top: 1px solid #FAFAFA;
+  padding: 7px;
+}
+
+.contacts-container img {
+  vertical-align: text-top;
+}
+
+.contacts-container .contact-name {
+  padding-left: 10px;
+}
+
+/* _MAIN */
+.main-container {
+  position: relative;
+  height: 100%;
+  width: 65%;
+}
+
+/* _main-top */
+.main-top {
+  width: 100%;
+  height: calc(100% - 70px); /* collegato ad altezza main-bottom */
+}
+
+/* __nav */
+.main-top nav {
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.main-top nav ul.box-left {
+  width: 60%;
+}
+
+.main-top nav ul.box-right {
+  width: 40%;
+  text-align: right;
+}
+
+.main-top nav ul li {
+  display: inline-block;
+}
+
+.main-top nav .interlocutor-container {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.main-top nav .interlocutor-container .interlocutor-details {
+  padding-left: 7px;
+}
+
+.main-top nav .interlocutor-container .interlocutor-access {
+  font-size: 13px;
+  color: #ABB1B4;
+}
+
+.main-top nav .interlocutor-container .interlocutor-details {
+}
+
+/* __lista messaggi */
+.messages-container {
+  background-image: url("../images/mine.jpg");
+  overflow-y: scroll;
+  height: calc(100% - 70px);
+  padding: 30px 0;
+}
+
+/* message */
+.message {
+  width: 190px;
+  border-radius: 6px;
+  padding: 10px 10px 19px;
+  position: relative; /* per posizionare ora */
+  margin-bottom: 10px;
+}
+
+.message::after {
+  content: "19:19";
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  font-size: 13px;
+  color: #DFDEDF;
+}
+
+.my-message {
+  margin-left: calc(100% - 10% - 190px); /* width contenitore - margine sinistro - width fumetto */
+  background-color: #DFFBC6;
+}
+
+.interlocutor-message {
+  margin-left: 10%;
+  background-color: white;
+}
+/* /message */
+
+/* _main-bottom */
+.main-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 70px;
+  background-color: #f2efe9;
+  display: flex;
+  align-items: center;
+}
+
+.main-bottom .box-left,
+.box-right {
+  width: 10%;
+  text-align: center;
+}
+
+.main-bottom .box-central {
+  width: 80%;
+}
+
+.main-bottom .box-central input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid hsl(0, 0%, 20%);
+  border-radius: 4px;
+  padding-left: 10px  
+}
