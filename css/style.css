@@ -19,7 +19,6 @@ html {
 .app-container {
   width: 80%;
   min-width: 950px;
-  outline: 1px dotted lightblue;
   height: 95vh;
   clear: both;
   margin: 0 auto;
@@ -32,6 +31,10 @@ ul {
 .sidebar > nav,
 .main-top > nav {
   background-color: #eaeaea;
+}
+
+a {
+  color: #6E92A9;
 }
 
 .avatar {
@@ -74,9 +77,8 @@ ul {
 /* _SIDEBAR */
 .sidebar {
   width: 35%;
-  outline: 1px dotted lightblue;
-  float: left;
   height: 100%;
+  border-right: 1px solid #8181CF;
 }
 
 /* _nav */
@@ -108,10 +110,7 @@ ul {
 .sidebar .notifications {
   background-color: #8edafc;
   height: 70px;
-  line-height: 70px;
-}
-.sidebar .notifications > * {
-  display: inline-block;
+  position: relative;
 }
 
 .sidebar .notifications .img-container {
@@ -119,11 +118,14 @@ ul {
   background-color: white;
   width: 50px;
   height: 50px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  transform: translateY(-50%);
 }
 
 .sidebar .notifications .img-container i {
-  font-size: 30px;
+  font-size: 24px;
   color: #8edafc;
   position: absolute;
   top: 50%;
@@ -133,18 +135,15 @@ ul {
 
 .sidebar .notifications .description {
   line-height: normal;
-  width: calc(100% - 50px);
-}
-
-.sidebar .notifications * {
-  vertical-align: middle;
+  position: absolute;
+  transform: translateY(-50%);
+  left: 70px;
+  top: 50%;
 }
 
 /* _searchbar */
 .sidebar .searchbar {
   background-color: #FAFAFA;
-  /* height: 50px; */
-  /* line-height: 50px; */
   padding: 7px; /* uguale a padding contact list li */
 }
 
@@ -190,14 +189,12 @@ ul {
 .main-container {
   position: relative;
   height: 100%;
-  float: right;
   width: 65%;
 }
 
 /* _main-top */
 .main-top {
   width: 100%;
-  outline: 1px dotted lightblue;
   height: calc(100% - 70px); /* collegato ad altezza main-bottom */
 }
 
@@ -255,7 +252,6 @@ ul {
 
 /* message */
 .message {
-  /* height: 40px; */
   width: 190px;
   border-radius: 6px;
   padding: 10px 10px 19px;
@@ -289,7 +285,6 @@ ul {
   position: absolute;
   bottom: 0;
   right: 0;
-  outline: 1px dotted lightblue;
   height: 70px;
   line-height: 70px;
   background-color: #f2efe9;

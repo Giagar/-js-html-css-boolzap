@@ -15,10 +15,10 @@
     <div class="wrapper">
 
 <!-- ??#root meglio riferirlo a wrapper, amche se non verrà mai toccato da vue??-->
-        <div class="app-container" id="root">
+        <div class="app-container clearfix" id="root">
 
             <!-- contiene navbar, notifiche, search, lista contatti (box) -->
-            <aside class="sidebar">
+            <aside class="sidebar float-left">
                 
                 <!-- navbar -->
                 <nav class="clearfix">
@@ -42,16 +42,15 @@
                     </ul>
                 </nav>
 
-<!-- ?? perché non funziona?? -->
                 <!-- notifiche -->
                 <div class="notifications">
                     <div class="img-container">
-                        <i class="fas fa-bell-slash avatar"></i>
+                        <i class="fas fa-bell-slash"></i>
                     </div>
-                    <!-- <div class="description">
+                    <div class="description">
                         <span>Ricevi notifiche di nuovi messaggi</span> <br>
                         <a href="#">Attiva notifiche desktop</a>
-                    </div> -->
+                    </div>
                 </div>
 
                 <!-- searchbar -->
@@ -74,7 +73,7 @@
 
             </aside>
 
-            <main class="main-container">
+            <main class="main-container float-right">
                 <!-- contiene navbar, lista messaggi(box) -->
                 <section class="main-top">
 
