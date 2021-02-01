@@ -42,6 +42,9 @@ ul {
 
 .icon-size {
   font-size: 22px;
+}
+
+.sidebar .icon-size, .main-top .icon-size {
   padding-right: 15px;
 }
 
@@ -107,6 +110,9 @@ ul {
   height: 70px;
   line-height: 70px;
 }
+.sidebar .notifications > * {
+  display: inline-block;
+}
 
 .sidebar .notifications .img-container {
   border-radius: 50%;
@@ -127,7 +133,7 @@ ul {
 
 .sidebar .notifications .description {
   line-height: normal;
-  width: calc(100% - 70px);
+  width: calc(100% - 50px);
 }
 
 .sidebar .notifications * {
@@ -192,7 +198,7 @@ ul {
 .main-top {
   width: 100%;
   outline: 1px dotted lightblue;
-  height: calc(100% - 100px);
+  height: calc(100% - 70px); /* collegato ad altezza main-bottom */
 }
 
 /* __nav */
@@ -243,7 +249,7 @@ ul {
 .messages-container {
   background-image: url("../images/mine.jpg");
   overflow-y: scroll;
-  /* height: calc(100% - nav - msgInput) */
+  height: calc(100% - 70px);
 }
 
 /* _main-bottom */
@@ -253,19 +259,25 @@ ul {
   bottom: 0;
   right: 0;
   outline: 1px dotted lightblue;
-  height: 100px;
+  height: 70px;
+  line-height: 70px;
   background-color: #f2efe9;
-}
-
-.main-bottom .box {
-  text-align: center;
 }
 
 .main-bottom .box-left,
 .box-right {
   width: 10%;
+  text-align: center;
 }
 
 .main-bottom .box-central {
   width: 80%;
+}
+
+.main-bottom .box-central input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid hsl(0, 0%, 20%);
+  border-radius: 4px;
+  padding-left: 10px
 }
