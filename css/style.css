@@ -177,6 +177,10 @@ ul {
   padding: 7px;
 }
 
+.contacts-container li:hover {
+  background-color: lightgrey;
+}
+
 .contacts-container img {
   vertical-align: text-top;
 }

@@ -65,7 +65,7 @@
                 <!-- lista contatti -->
                 <div class="contacts-container">
                     <ul>
-                        <li v-for="(contact, i) in contacts" @click="selectContact(contact, i)">
+                        <li v-for="(contact, contactIndex) in contacts" @click="handleContactSelection(contact, contactIndex)">
                             <img class="contact-img avatar" :src="'./images/' + contact.avatar" alt="contact's picture">
                             <span class="contact-name">{{contact.name}}</span>
                         </li>
@@ -82,10 +82,10 @@
                     <nav class="clearfix">
                         <ul class="box-left float-left">
                             <li class="interlocutor-container">
-                                <img class="avatar" :src="'./images/' + selectedContact.avatar" alt="Michele's picture">
+                                <img class="avatar" :src="'./images/' + contacts[contactIndex].avatar" alt="Michele's picture">
                                 <div class="interlocutor-details">
-                                    <span class="interlocutor-name" v-model="selectedContact">{{selectedContact.name}}</span> <br>
-                                    <span class="interlocutor-access">Ultimo accesso oggi alle {{displayTime24(selectedContact.messages[(selectedContact.messages.length-1)].date)}}</span>
+                                    <span class="interlocutor-name" v-model="">{{contacts[contactIndex].name}}</span> <br>
+                                    <span class="interlocutor-access">Ultimo accesso oggi alle {{contacts[contactIndex].messages[(contacts[contactIndex].messages.length -1 )].date}}</span>
                                 </div>
                             </li>
                         </ul>
@@ -99,13 +99,13 @@
 
                     <!-- lista messaggi -->
                     <div class="messages-container">
-                        <div v-for="message in selectedContact.messages" :class="{
+                        <div v-for="message in contacts[contactIndex].messages" :class="{
                             message: true,
                             'my-message': message.status === 'sent',
                             'interlocutor-message': message.status === 'received',
                         }">
                             <span class="message-content">{{message.text}}</span>
-                            <span class="message-time">{{displayTime24(message.date)}}</span>
+                            <span class="message-time">formatDate(message.date)s</span>
                         </div>
                     </div>
 

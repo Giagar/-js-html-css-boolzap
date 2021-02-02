@@ -88,88 +88,46 @@ var app = new Vue({
       },
     ],
 
-    selectedContact: {
-      name: "Michele",
-      avatar: "avatar_1.jpg",
-      visible: true,
-      messages: [
-        {
-          date: "10/01/2020 15:30:55",
-          text: "Hai portato a spasso il cane?",
-          status: "sent",
-        },
-        {
-          date: "10/01/2020 15:50:00",
-          text: "Ricordati di dargli da mangiare",
-          status: "sent",
-        },
-        {
-          date: "10/01/2020 16:15:22",
-          text: "Tutto fatto!",
-          status: "received",
-        },
-      ],
-    },
+    contactIndex: 0,
 
-    selectedContactIndex: 0,
-
-    userMessage: "",
+    userMessage: "", // var creata per poter poi svuotare l'input
   },
 
-  // mounted: function() {
-  //   this.selectContact();
-  // },
-
   methods: {
-    selectContact: function(contact, i) {
-      this.selectedContact = contact;
-      this.selectedContactIndex = i;
+    
+    handleContactSelection: function(contact, contactIndex) {
+      console.log(contact, contactIndex);
+      this.contactIndex = contactIndex;
     },
 
-    handleSubmit: function(userMessage) {
-      // milestone 3, step 1
-      // console.log(this.contacts[this.selectedContactIndex].messages);
-      this.contacts[this.selectedContactIndex].messages.push({ 
-        date: this.timeNow(),
-        text: userMessage, 
+    handleSubmit(msg) {
+      this.userMessage = msg; // passo attraverso userMessage invece di usare direttamente msg per poter poi svuotare l'input
+
+      this.contacts[this.contactIndex].messages.push({
+        date: "this.formatDate(this.timeNow())",
+        text: this.userMessage,
         status: "sent",
       });
-
-      // this.selectedContact.messages.push({ 
-      //   date: this.timeNow(),
-      //   text: userMessage, 
-      //   status: "sent",
-      // });
-
-      this.userMessage = "";
       
-      // milestone 3, step 2
+      this.userMessage = "";
+
       setTimeout(() => {
-        this.contacts[this.selectedContactIndex].messages.push({ 
-          date: this.timeNow(),
-          text: "ok", 
+        this.contacts[this.contactIndex].messages.push({
+          date: "this.formatDate(this.timeNow())",
+          text: "ok",
           status: "received",
         });
-  
-      //   // this.selectedContact.messages.push({ 
-      //   //   date: this.timeNow(),
-      //   //   text: "ok", 
-      //   //   status: "received",
-      //   // });
-
-      //   console.log(this.selectedContact.messages)
       }, 1000)
     },
-    timeNow: function() {
-      let now = new Date();
-      // console.log(moment(now).format('h:mm a'));
-      // return moment(now).format('h:mm a');
-      return now;
-    },
 
-    displayTime24: function(time) {
-      return moment(time).format('HH:mm');
-    }
+    // timeNow: function() {
+    //   let now = new Date();
+    //   return now;
+    // },
+
+    // formatDate: function(date) {
+    //   return moment(date).format('HH:mm');
+    // },
   }
 });
 
