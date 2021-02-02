@@ -123,20 +123,37 @@ var app = new Vue({
     },
 
     handleSubmit: function(userMessage) {
+      // milestone 3, step 1
       this.contacts[this.selectedContactIndex].messages.push({ 
         date: "to do",
         text: userMessage, 
         status: "sent",
       });
 
-      this.selectedContact.messages.push({ 
-        date: "to do",
-        text: userMessage, 
-        status: "sent",
-      });
+      // this.selectedContact.messages.push({ 
+      //   date: "to do",
+      //   text: userMessage, 
+      //   status: "sent",
+      // });
 
       this.userMessage = "";
       
+      // milestone 3, step 2
+      setTimeout(() => {
+        this.contacts[this.selectedContactIndex].messages.push({ 
+          date: "to do",
+          text: "ok", 
+          status: "received",
+        });
+  
+      //   // this.selectedContact.messages.push({ 
+      //   //   date: "to do",
+      //   //   text: "ok", 
+      //   //   status: "received",
+      //   // });
+
+      //   console.log(this.selectedContact.messages)
+      }, 1000)
     }
   }
 });
