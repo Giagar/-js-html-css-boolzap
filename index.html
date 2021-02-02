@@ -98,10 +98,12 @@
 
                     <!-- lista messaggi -->
                     <div class="messages-container">
-                        <div class="message my-message">mymsg: lorem ipsum</div>
-                        <div class="message interlocutor-message">interlocutormsg: lorem ipsum</div>
-                        <div class="message interlocutor-message">interlocutormsg: lorem ipsum</div>
-                        <div class="message my-message">mymsg: lorem ipsum</div>
+
+                        <div v-for="message in contacts[0].messages" :class="{
+                            message: true,
+                            'my-message': message.status === 'sent',
+                            'interlocutor-message': message.status === 'received',
+                        }">{{message.text}}</div>
                     </div>
 
                 </section>
