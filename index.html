@@ -64,7 +64,7 @@
                 <!-- lista contatti -->
                 <div class="contacts-container">
                     <ul>
-                        <li v-for="contact in contacts" @click="selectContact(contact)">
+                        <li v-for="(contact, i) in contacts" @click="selectContact(contact, i)">
                             <img class="contact-img avatar" :src="'./images/' + contact.avatar" alt="contact's picture">
                             <span class="contact-name">{{contact.name}}</span>
                         </li>
@@ -74,7 +74,7 @@
             </aside>
 
             <main class="main-container float-right">
-                <!-- contiene navbar, lista messaggi(box) -->
+                <!-- contiene navbar, lista smessaggi(box) -->
                 <section class="main-top">
 
                     <!-- navbar -->
@@ -113,7 +113,7 @@
                         <i class="icon-size icon-color-dark far fa-smile"></i>
                     </div>
                     <div class="box-central float-left">
-                        <input type="text" name="userMessage" id="userMessage" placeholder="Scrivi un messaggio">
+                        <input type="text" name="userMessage" id="userMessage" placeholder="Scrivi un messaggio" v-model="userMessage" @keyup.enter="handleSubmit(userMessage)">
                     </div>
                     <div class="box-right float-left">
                         <i class="icon-size icon-color-dark fas fa-microphone"></i>

@@ -110,12 +110,33 @@ var app = new Vue({
         },
       ],
     },
+
+    selectedContactIndex: 0,
+
+    userMessage: "",
   },
 
   methods: {
-    selectContact: function(contact) {
-      // console.log(this.selectedContact)
+    selectContact: function(contact, i) {
       this.selectedContact = contact;
+      this.selectedContactIndex = i;
+    },
+
+    handleSubmit: function(userMessage) {
+      this.contacts[this.selectedContactIndex].messages.push({ 
+        date: "to do",
+        text: userMessage, 
+        status: "sent",
+      });
+
+      this.selectedContact.messages.push({ 
+        date: "to do",
+        text: userMessage, 
+        status: "sent",
+      });
+
+      this.userMessage = "";
+      
     }
   }
 });
