@@ -7,6 +7,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
@@ -84,7 +85,7 @@
                                 <img class="avatar" :src="'./images/' + selectedContact.avatar" alt="Michele's picture">
                                 <div class="interlocutor-details">
                                     <span class="interlocutor-name" v-model="selectedContact">{{selectedContact.name}}</span> <br>
-                                    <span class="interlocutor-access">Ultimo accesso oggi alle</span>
+                                    <span class="interlocutor-access">Ultimo accesso oggi alle {{displayTime24(selectedContact.messages[(selectedContact.messages.length-1)].date)}}</span>
                                 </div>
                             </li>
                         </ul>
@@ -102,7 +103,10 @@
                             message: true,
                             'my-message': message.status === 'sent',
                             'interlocutor-message': message.status === 'received',
-                        }">{{message.text}}</div>
+                        }">
+                            <span class="message-content">{{message.text}}</span>
+                            <span class="message-time">{{displayTime24(message.date)}}</span>
+                        </div>
                     </div>
 
                 </section>

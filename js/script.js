@@ -116,9 +116,9 @@ var app = new Vue({
     userMessage: "",
   },
 
-  mounted: function() {
-    this.selectContact();
-  },
+  // mounted: function() {
+  //   this.selectContact();
+  // },
 
   methods: {
     selectContact: function(contact, i) {
@@ -128,14 +128,15 @@ var app = new Vue({
 
     handleSubmit: function(userMessage) {
       // milestone 3, step 1
+      // console.log(this.contacts[this.selectedContactIndex].messages);
       this.contacts[this.selectedContactIndex].messages.push({ 
-        date: "to do",
+        date: this.timeNow(),
         text: userMessage, 
         status: "sent",
       });
 
       // this.selectedContact.messages.push({ 
-      //   date: "to do",
+      //   date: this.timeNow(),
       //   text: userMessage, 
       //   status: "sent",
       // });
@@ -145,19 +146,29 @@ var app = new Vue({
       // milestone 3, step 2
       setTimeout(() => {
         this.contacts[this.selectedContactIndex].messages.push({ 
-          date: "to do",
+          date: this.timeNow(),
           text: "ok", 
           status: "received",
         });
   
       //   // this.selectedContact.messages.push({ 
-      //   //   date: "to do",
+      //   //   date: this.timeNow(),
       //   //   text: "ok", 
       //   //   status: "received",
       //   // });
 
       //   console.log(this.selectedContact.messages)
       }, 1000)
+    },
+    timeNow: function() {
+      let now = new Date();
+      // console.log(moment(now).format('h:mm a'));
+      // return moment(now).format('h:mm a');
+      return now;
+    },
+
+    displayTime24: function(time) {
+      return moment(time).format('HH:mm');
     }
   }
 });
