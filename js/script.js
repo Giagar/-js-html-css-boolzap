@@ -116,6 +116,10 @@ var app = new Vue({
     userMessage: "",
   },
 
+  mounted: function() {
+    this.selectContact();
+  },
+
   methods: {
     selectContact: function(contact, i) {
       this.selectedContact = contact;
