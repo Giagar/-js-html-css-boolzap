@@ -133,7 +133,7 @@ var app = new Vue({
       return now;
     },
 
-    // converte una data in formato stringa in un oggetto js (necessario per standard deprecato in libreria moment)
+    // converte una data in formato stringa in un oggetto js (necessario per standard deprecato in libreria moment - dayjs non sembra avere questo problema, ma per adesso lo tengo)
     jsDate: function (date) {
       // console.log("date", date);
       let regularDate = new Date(date);
@@ -143,7 +143,7 @@ var app = new Vue({
 
     // converte data ricevuta in formato desiderato (solo ore e minuti in formato 24 ore)
     formatDate: function (date) {
-      return moment(date).format("HH:mm");
+      return dayjs(date).format("HH:mm");
     },
 
     // restituisce la data dell'ultimo messaggio spedito dall'interlocutore
@@ -157,11 +157,12 @@ var app = new Vue({
 
     // gestisce la search: prende il valore dell'input da userSearch e, in base alla corrispondenza fra questo valore e la proprietà name di ogni oggetto in contacts, modifica la proprietà visible in contacts
     handleSearch: function() {
-      this.contacts.forEach(contact => this.userSearch ===  "" ? 
-        contact.visible = true : 
-        contact.name.startsWith(this.userSearch) ? 
+      this.contacts.forEach(contact => 
+        this.userSearch ===  "" ? 
           contact.visible = true : 
-          contact.visible = false 
+          contact.name.startsWith(this.userSearch) ? 
+            contact.visible = true : 
+            contact.visible = false 
       );
     }
   },
