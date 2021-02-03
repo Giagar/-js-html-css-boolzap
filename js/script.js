@@ -104,7 +104,7 @@ var app = new Vue({
       this.userMessage = msg; // passo attraverso userMessage invece di usare direttamente msg per poter poi svuotare l'input
 
       this.contacts[this.contactIndex].messages.push({
-        date: "this.formatDate(this.timeNow())",
+        date: this.timeNow(),
         text: this.userMessage,
         status: "sent",
       });
@@ -113,21 +113,36 @@ var app = new Vue({
 
       setTimeout(() => {
         this.contacts[this.contactIndex].messages.push({
-          date: "this.formatDate(this.timeNow())",
+          date: this.timeNow(),
           text: "ok",
           status: "received",
         });
       }, 1000)
     },
 
-    // timeNow: function() {
-    //   let now = new Date();
-    //   return now;
-    // },
+    // restituisce la data attuale completa in formato js Date
+    timeNow: function() {
+      let now = new Date();
+      return now;
+    },
 
-    // formatDate: function(date) {
-    //   return moment(date).format('HH:mm');
-    // },
+    // converte una data in formato stringa in un oggetto js (necessario per standard deprecato in libreria moment)
+    jsDate: function(date) {
+      let regularDate = new Date(date);
+      return regularDate;
+    },
+
+    // converte data ricevuta in formato desiderato (solo ore e minuti in formato 24 ore)
+    formatDate: function(date) {
+      return moment(date).format('HH:mm');
+    },
+
+    // restituisce la data dell'ultimo messaggio spedito dall'interlocutore
+    interlocutorLastAccess: function() {
+      let arr = this.contacts[this.contactIndex].messages.filter(msg => msg.status === "received");
+      let index = arr.length - 1;
+      return arr[index].date;
+    },
   }
 });
 

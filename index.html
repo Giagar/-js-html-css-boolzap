@@ -85,7 +85,7 @@
                                 <img class="avatar" :src="'./images/' + contacts[contactIndex].avatar" alt="Michele's picture">
                                 <div class="interlocutor-details">
                                     <span class="interlocutor-name" v-model="">{{contacts[contactIndex].name}}</span> <br>
-                                    <span class="interlocutor-access">Ultimo accesso oggi alle {{contacts[contactIndex].messages[(contacts[contactIndex].messages.length -1 )].date}}</span>
+                                    <span class="interlocutor-access">Ultimo accesso oggi alle {{formatDate(jsDate(interlocutorLastAccess()))}}</span>
                                 </div>
                             </li>
                         </ul>
@@ -105,7 +105,7 @@
                             'interlocutor-message': message.status === 'received',
                         }">
                             <span class="message-content">{{message.text}}</span>
-                            <span class="message-time">formatDate(message.date)s</span>
+                            <span class="message-time">{{formatDate(jsDate(message.date))}}</span>
                         </div>
                     </div>
 
