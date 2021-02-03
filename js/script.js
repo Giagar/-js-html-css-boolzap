@@ -1,3 +1,7 @@
+/* PROBLEMA CON LA DATA 
+  La data viene presa in formato anglosassone (probabilmente) e sia jsDate sia formatDate restituiscono Invalid Date nel caso di Fabio e Samuele (infatti, prima data di Fabio - cambiata da me - con prime cifre minori di 13 non dà problemi). Provato: cambiare impostazioni browser e computer, caricato sito su computer italiano, modificato lang in html/head, ma problema rimane. 
+*/
+
 var app = new Vue({
   el: "#root",
 
@@ -31,7 +35,7 @@ var app = new Vue({
         visible: true,
         messages: [
           {
-            date: "20/03/2020 16:30:00",
+            date: "12/03/2020 16:30:00",
             text: "Ciao come stai?",
             status: "sent",
           },
@@ -91,12 +95,15 @@ var app = new Vue({
     contactIndex: 0,
 
     userMessage: "", // var creata per poter poi svuotare l'input
+
+    userSearch: "",
+
+    // search="",
   },
 
   methods: {
-    
-    handleContactSelection: function(contact, contactIndex) {
-      console.log(contact, contactIndex);
+    handleContactSelection: function (contact, contactIndex) {
+      // console.log(contact, contactIndex);
       this.contactIndex = contactIndex;
     },
 
@@ -108,7 +115,7 @@ var app = new Vue({
         text: this.userMessage,
         status: "sent",
       });
-      
+
       this.userMessage = "";
 
       setTimeout(() => {
@@ -117,33 +124,47 @@ var app = new Vue({
           text: "ok",
           status: "received",
         });
-      }, 1000)
+      }, 1000);
     },
 
     // restituisce la data attuale completa in formato js Date
-    timeNow: function() {
+    timeNow: function () {
       let now = new Date();
       return now;
     },
 
     // converte una data in formato stringa in un oggetto js (necessario per standard deprecato in libreria moment)
-    jsDate: function(date) {
+    jsDate: function (date) {
+      // console.log("date", date);
       let regularDate = new Date(date);
+      // console.log("reg", regularDate);
       return regularDate;
     },
 
     // converte data ricevuta in formato desiderato (solo ore e minuti in formato 24 ore)
-    formatDate: function(date) {
-      return moment(date).format('HH:mm');
+    formatDate: function (date) {
+      return moment(date).format("HH:mm");
     },
 
     // restituisce la data dell'ultimo messaggio spedito dall'interlocutore
-    interlocutorLastAccess: function() {
-      let arr = this.contacts[this.contactIndex].messages.filter(msg => msg.status === "received");
+    interlocutorLastAccess: function () {
+      let arr = this.contacts[this.contactIndex].messages.filter(
+        (msg) => msg.status === "received"
+      );
       let index = arr.length - 1;
       return arr[index].date;
     },
-  }
+
+    // gestisce la search: prende il valore dell'input da userSearch e, in base alla corrispondenza fra questo valore e la proprietà name di ogni oggetto in contacts, modifica la proprietà visible in contacts
+    handleSearch: function() {
+      this.contacts.forEach(contact => this.userSearch ===  "" ? 
+        contact.visible = true : 
+        contact.name.startsWith(this.userSearch) ? 
+          contact.visible = true : 
+          contact.visible = false 
+      );
+    }
+  },
 });
 
 Vue.config.devtools = true;

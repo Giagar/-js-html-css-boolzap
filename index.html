@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +13,12 @@
 </head>
 <body>
 
+<!-- PROBLEMA CON LA DATA 
+    La data viene presa in formato anglosassone (probabilmente) e sia jsDate sia formatDate restituiscono Invalid Date nel caso di Fabio e Samuele (infatti, prima data di Fabio - cambiata da me - con prime cifre minori di 13 non dà problemi). Provato: cambiare impostazioni browser e computer, caricato sito su computer italiano, modificato lang in html/head, ma problema rimane.  
+-->
+
     <div class="wrapper">
 
-<!-- ??#root meglio riferirlo a wrapper, amche se non verrà mai toccato da vue??-->
         <div class="app-container clearfix" id="root">
 
             <!-- contiene navbar, notifiche, search, lista contatti (box) -->
@@ -58,14 +61,14 @@
                 <div class="searchbar">
                     <div class="input-container">
                         <i class="icon-color-light fas fa-search"></i>
-                        <input type="text" name="search" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" name="search" placeholder="Cerca o inizia una nuova chat" v-model="userSearch" @keyup="handleSearch">
                     </div>
                 </div>
 
                 <!-- lista contatti -->
                 <div class="contacts-container">
                     <ul>
-                        <li v-for="(contact, contactIndex) in contacts" @click="handleContactSelection(contact, contactIndex)">
+                        <li v-for="(contact, contactIndex) in contacts" v-if="contact.visible" @click="handleContactSelection(contact, contactIndex)">
                             <img class="contact-img avatar" :src="'./images/' + contact.avatar" alt="contact's picture">
                             <span class="contact-name">{{contact.name}}</span>
                         </li>
