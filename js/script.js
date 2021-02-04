@@ -16,6 +16,7 @@ var app = new Vue({
             date: "10/01/2020 15:30:55",
             text: "Hai portato a spasso il cane?",
             status: "sent",
+            opener: "closed",
           },
           {
             date: "10/01/2020 15:50:00",
@@ -98,7 +99,7 @@ var app = new Vue({
 
     userSearch: "",
 
-    // search="",
+    deleteVisible: "no", // non funziona
   },
 
   methods: {
@@ -160,7 +161,7 @@ var app = new Vue({
       this.contacts.forEach(contact => 
         this.userSearch ===  "" ? 
           contact.visible = true : 
-          contact.name.startsWith(this.userSearch) ? 
+          contact.name.toLowerCase().startsWith(this.userSearch.toLowerCase()) ? 
             contact.visible = true : 
             contact.visible = false 
       );
@@ -174,13 +175,25 @@ var app = new Vue({
 
     // funziona come toggle per display (block / none) di message-delete
     handleDeleteOpener: function(messageIndex) {
-      this.contacts[this.contactIndex].messages[messageIndex] = {...this.contacts[this.contactIndex].messages[messageIndex], opener: "opened"};
+
+      this.deleteVisible === "no" ? 
+        this.deleteVisible = "yes" :
+        this.deleteVisible = "no";
+
+
+      
+      
+
+      // console.log(this.contacts[this.contactIndex].messages[messageIndex]);
+      // this.contacts[this.contactIndex].messages[messageIndex] = {...this.contacts[this.contactIndex].messages[messageIndex], opener: "closed"};
+      // this.contacts[this.contactIndex].messages[messageIndex].opener = "opened";
+      // console.log(this.contacts[this.contactIndex].messages[messageIndex]);
+      // this.contacts[this.contactIndex].messages[messageIndex].opener = "opened";
 
       // this.contacts[this.contactIndex].messages[messageIndex].opener === "opened"? 
       //   this.contacts[this.contactIndex].messages[messageIndex].opener = "closed" :
       //   this.contacts[this.contactIndex].messages[messageIndex].opener = "opened";
 
-        console.log(this.contacts[this.contactIndex].messages[messageIndex].opener);
       
 
       
