@@ -171,6 +171,16 @@ var app = new Vue({
       this.contacts[this.contactIndex].messages = this.contacts[this.contactIndex].messages
         .filter((msg, index) => index !== messageIndex);
     },
+
+    // funziona come toggle per display (block / none) di message-delete
+    handleDeleteOpener: function(id) {
+      let target = document.querySelector(".message-delete");
+      target.style.color = "green"
+      // target.style.display === "none" ?
+      //   target.style.display = "block" :
+      //   target.style.display = "none" ;
+      // console.log(this, id)
+    }
   },
 });
 
