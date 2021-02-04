@@ -271,6 +271,13 @@ ul {
   color: #DFDEDF;
 }
 
+.message-delete {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
 .my-message {
   margin-left: calc(100% - 10% - 190px); /* width contenitore - margine sinistro - width fumetto */
   background-color: #DFFBC6;

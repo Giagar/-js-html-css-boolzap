@@ -103,13 +103,16 @@
 
                     <!-- lista messaggi -->
                     <div class="messages-container">
-                        <div v-for="message in contacts[contactIndex].messages" :class="{
+                        <div v-for="(message, messageIndex) in contacts[contactIndex].messages" :class="{
                             message: true,
                             'my-message': message.status === 'sent',
                             'interlocutor-message': message.status === 'received',
                         }">
                             <span class="message-content">{{message.text}}</span>
                             <span class="message-time">{{formatDate(jsDate(message.date))}}</span>
+                            <div v-if="message.status === 'sent'" class="message-delete">
+                                <span @click="handleDelete(messageIndex)">X</span>
+                            </div>
                         </div>
                     </div>
 

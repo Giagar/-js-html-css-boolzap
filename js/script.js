@@ -164,7 +164,13 @@ var app = new Vue({
             contact.visible = true : 
             contact.visible = false 
       );
-    }
+    },
+
+    // cancella il messaggio user selezionato
+    handleDelete: function(messageIndex) {
+      this.contacts[this.contactIndex].messages = this.contacts[this.contactIndex].messages
+        .filter((msg, index) => index !== messageIndex);
+    },
   },
 });
 
