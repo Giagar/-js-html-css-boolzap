@@ -173,9 +173,20 @@ var app = new Vue({
     },
 
     // funziona come toggle per display (block / none) di message-delete
-    handleDeleteOpener: function(id) {
-      let target = document.querySelector(".message-delete");
-      target.style.color = "green"
+    handleDeleteOpener: function(messageIndex) {
+      this.contacts[this.contactIndex].messages[messageIndex] = {...this.contacts[this.contactIndex].messages[messageIndex], opener: "opened"};
+
+      // this.contacts[this.contactIndex].messages[messageIndex].opener === "opened"? 
+      //   this.contacts[this.contactIndex].messages[messageIndex].opener = "closed" :
+      //   this.contacts[this.contactIndex].messages[messageIndex].opener = "opened";
+
+        console.log(this.contacts[this.contactIndex].messages[messageIndex].opener);
+      
+
+      
+      // let target = document.querySelector(".message-delete");
+      // target.style.color = "green"
+
       // target.style.display === "none" ?
       //   target.style.display = "block" :
       //   target.style.display = "none" ;

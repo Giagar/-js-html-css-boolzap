@@ -111,7 +111,7 @@
                             <span class="message-content">{{message.text}}</span>
                             <span class="message-time">{{formatDate(jsDate(message.date))}}</span>
                             <i v-if="message.status === 'sent'" class="fas fa-angle-down message-delete-opener" @click="handleDeleteOpener(messageIndex)"></i>
-                            <div v-if="message.status === 'sent'" class="message-delete">
+                            <div v-if="message.opener == 'opened'" class="message-delete">
                                 <span @click="handleDelete(messageIndex)">Cancella messaggio</span>
                             </div>
                         </div>
