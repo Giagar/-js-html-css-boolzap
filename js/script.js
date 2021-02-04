@@ -16,7 +16,6 @@ var app = new Vue({
             date: "10/01/2020 15:30:55",
             text: "Hai portato a spasso il cane?",
             status: "sent",
-            opener: "closed",
           },
           {
             date: "10/01/2020 15:50:00",
@@ -100,12 +99,15 @@ var app = new Vue({
     userSearch: "",
 
     deleteVisible: "no", // non funziona
+
+    deleteIndex: 0,
   },
 
   methods: {
     handleContactSelection: function (contact, contactIndex) {
       // console.log(contact, contactIndex);
       this.contactIndex = contactIndex;
+      this.deleteVisible= "no";
     },
 
     handleSubmit(msg) {
@@ -171,10 +173,15 @@ var app = new Vue({
     handleDelete: function(messageIndex) {
       this.contacts[this.contactIndex].messages = this.contacts[this.contactIndex].messages
         .filter((msg, index) => index !== messageIndex);
+
+        this.deleteVisible = "no";
+
     },
 
     // funziona come toggle per display (block / none) di message-delete
     handleDeleteOpener: function(messageIndex) {
+
+      this.deleteIndex = messageIndex;
 
       this.deleteVisible === "no" ? 
         this.deleteVisible = "yes" :
